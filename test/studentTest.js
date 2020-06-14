@@ -24,6 +24,7 @@ describe('students', () => {
             .end((err, res) => {
                 assert.equal(res.status, 404, "Status should be 404");
                 assert.property(res.body, 'message', "Body should have 'message' property");
+                done();
             });
     });
 });
