@@ -1,7 +1,7 @@
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 var server = require('../app');
-var assert = chai.assert();
+var assert = chai.assert;
 
 chai.use(chaiHttp);
 
