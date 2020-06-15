@@ -8,7 +8,7 @@ const facultyController = require('../controllers/facultyController');
  * 
  * @apiSuccess {Faculty[]} docs Array of faculty
  */
-app.get("/", facultyController.getAllFaculty);
+router.get("/", facultyController.getAllFaculty);
 
 /**
  * @api {get} /api/faculty/:id Get one faculty
@@ -24,7 +24,7 @@ app.get("/", facultyController.getAllFaculty);
  * @apiSuccess {String} department Department of faculty
  * @apiSuccess {Class[]} classes Classes faculty is teaching 
  */
-app.get("/:id", facultyController.getOneFaculty);
+router.get("/:id", facultyController.getOneFaculty);
 
 /**
  * @api {post} /api/faculty Create new faculty
@@ -43,6 +43,6 @@ app.get("/:id", facultyController.getOneFaculty);
  * @apiSuccess {String} department Department of faculty
  * @apiSuccess {Class[]} classes Classes faculty is teaching (empty)
  */
-app.post("/", facultyController.postOneFaculty);
+router.post("/", facultyController.postOneFaculty);
 
 module.exports = router;
