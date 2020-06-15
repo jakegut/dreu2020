@@ -1,6 +1,6 @@
 {
   "title": "DREU 2020 Docs",
-  "url": "http://jakeryang.github.io/dreu2020/",
+  "url": "http://jakeryang.github.io/dreu2020",
   "name": "dreu2020-db",
   "version": "1.0.0",
   "description": "",
@@ -9,7 +9,7 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2020-06-15T17:02:37.921Z",
+    "time": "2020-06-15T20:27:34.796Z",
     "url": "http://apidocjs.com",
     "version": "0.23.0"
   }

@@ -1,6 +1,192 @@
 define({ "api": [
   {
     "type": "get",
+    "url": "/api/faculty",
+    "title": "Get all faculty",
+    "name": "GetOneFaculty",
+    "group": "Faculty",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Faculty[]",
+            "optional": false,
+            "field": "docs",
+            "description": "<p>Array of faculty</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "views/facultyViews.js",
+    "groupTitle": "Faculty"
+  },
+  {
+    "type": "get",
+    "url": "/api/faculty/:id",
+    "title": "Get one faculty",
+    "name": "GetOneFaculty",
+    "group": "Faculty",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ObjectID of faculty</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ObjectID of faculty</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "firstName",
+            "description": "<p>First name of Faculty</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastName",
+            "description": "<p>Last name of faculty</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email address of faculty</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "department",
+            "description": "<p>Department of faculty</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Class[]",
+            "optional": false,
+            "field": "classes",
+            "description": "<p>Classes faculty is teaching</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "views/facultyViews.js",
+    "groupTitle": "Faculty"
+  },
+  {
+    "type": "post",
+    "url": "/api/faculty",
+    "title": "Create new faculty",
+    "name": "PostNewFaculty",
+    "group": "Faculty",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "firstName",
+            "description": "<p>First name of faculty</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "lastName",
+            "description": "<p>Last name of faculty</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email address of faculty</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "department",
+            "description": "<p>Deparmtent of faculty</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ObjectID of faculty</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "firstName",
+            "description": "<p>First name of Faculty</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastName",
+            "description": "<p>Last name of faculty</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email address of faculty</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "department",
+            "description": "<p>Department of faculty</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Class[]",
+            "optional": false,
+            "field": "classes",
+            "description": "<p>Classes faculty is teaching (empty)</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "views/facultyViews.js",
+    "groupTitle": "Faculty"
+  },
+  {
+    "type": "get",
     "url": "/api/students/",
     "title": "Get all students",
     "name": "GetAllStudents",
@@ -195,7 +381,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/api/students/",
-    "title": "Create a studnet",
+    "title": "Create a student",
     "name": "PostOneStudent",
     "group": "Student",
     "parameter": {
