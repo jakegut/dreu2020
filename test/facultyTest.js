@@ -43,7 +43,7 @@ describe("Faculty", () => {
                 assert.isNull(err);
                 facID = docs._id;
                 chai.request(server)
-                    .get(`/api/faculty/${facID}`)
+                    .get(`/api/faculty/${docs._id}`)
                     .end((e, res) => {
                         assert.equal(res.status, 200, "Status should be 200");
                         assert.property(res.body, '_id', "Body should have '_id' property");

@@ -9,7 +9,8 @@ exports.getAllFaculty = (req, res) => {
 
 exports.getOneFaculty = (req, res) => {
     Faculty.findById(req.params.id, (err, docs) => {
-        if(err) return res.status(404).json({message: "Faculty not found"})
+        if(err) return res.status(404).json({message: "Faculty not found"});
+        return res.json(docs);
     });
 }
 
