@@ -78,7 +78,7 @@ describe('students', () => {
             chai.request(server)
                 .get('/api/students/netid/0')
                 .end((err, res) => {
-                    assert.equal(res.status, 200, "Status should be 404");
+                    assert.equal(res.status, 200, "Status should be 200");
                     assert.property(res.body, 'netid', "Body should have 'netid' property");
                     assert.equal(res.body.netid, 0, "netid returned should be equal to input netid");
                     done();
@@ -101,7 +101,7 @@ describe('students', () => {
                 .send(stu)
                 .end((err, res) => {
                     assert.equal(res.status, 400, "Status should be 400");
-                    assert.property(res.body, 'err', "Body should have 'err' message");
+                    assert.property(res.body, 'errors', "Body should have 'errors' message");
                     done();
                 });
         });
@@ -118,7 +118,7 @@ describe('students', () => {
                 .send(stu)
                 .end((err, res) => {
                     assert.equal(res.status, 400, "Status should be 400");
-                    assert.property(res.body, 'err', "Body should have 'err' message");
+                    assert.property(res.body, 'errors', "Body should have 'err' message");
                     done();
                 });
         });
@@ -162,7 +162,7 @@ describe('students', () => {
                 .send(stu)
                 .end((err, res) => {
                     assert.equal(res.status, 400, "Status should be 400");
-                    assert.property(res.body, 'err', "Body should have 'err' message");
+                    assert.property(res.body, 'errors', "Body should have 'errors' message");
                     done();
                 });
         });
@@ -180,7 +180,7 @@ describe('students', () => {
                 .send(stu)
                 .end((err, res) => {
                     assert.equal(res.status, 400, "Status should be 400");
-                    assert.property(res.body, 'err', "Body should have 'err' message");
+                    assert.property(res.body, 'errors', "Body should have 'errors' message");
                     done();
                 });
         });

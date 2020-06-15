@@ -19,6 +19,7 @@ const studentSchema = mongoose.Schema({
         default: "UG"
     },
     credits: {
+        type: Number,
         default: 0,
         min: 0
     },
