@@ -61,6 +61,7 @@ describe("Faculty", () => {
                     assert.property(res.body, 'docs', "Body should have 'docs' property");
                     assert.typeOf(res.body.docs, 'array', "'docs' should be an array");
                     assert.lengthOf(res.body.docs, 1, "'docs' should be of length 1");
+                    done();
                 });
         });
     });
@@ -147,7 +148,7 @@ describe("Faculty", () => {
             }
 
             chai.request(server)
-                .post('/api/students')
+                .post('/api/faculty')
                 .send(fac)
                 .end((err, res) => {
                     assert.equal(res.status, 400, "Status should be 400");
