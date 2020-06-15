@@ -15,12 +15,11 @@ exports.getOneStudentById = (req, res) => {
         if(err) return res.status(404).json({message: "User not found"})
         res.json(docs);
     });
-
 }
 
 exports.getOneStudentByNetId = (req, res) => {
-    Student.findOne({netid: req.body.netid || -1}, (err, docs) => {
-        if(err) return res.json({message: "User not found by netid"});
+    Student.findOne({netid: req.params.netid}, (err, docs) => {
+        if(err) return res.status(404).json({message: "User not found by netid"});
         res.json(docs);
     });
 }
@@ -28,8 +27,8 @@ exports.getOneStudentByNetId = (req, res) => {
 exports.postOneStudent = (req, res) => {
     let {netid, firstName, lastName, email, classification, credits} = req.body;
     Student.create({netid, firstName, lastName, email, classification, credits}, (err, docs) => {
-        if(err) return res.json(err);
-        res.json({docs, message: "Student created"});
+        if(err) return res.status(400).json(err);
+        res.status(201).json({docs, message: "Student created"});
     });
 }
 
