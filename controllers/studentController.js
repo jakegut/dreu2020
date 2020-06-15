@@ -19,7 +19,8 @@ exports.getOneStudentById = (req, res) => {
 
 exports.getOneStudentByNetId = (req, res) => {
     Student.findOne({netid: req.params.netid}, (err, docs) => {
-        if(err) return res.status(404).json({message: "User not found by netid"});
+        if(err) return res.status(400).json(err);
+        if(docs === null) return res.status(404).json({message: "User not found with net id"})
         res.json(docs);
     });
 }
