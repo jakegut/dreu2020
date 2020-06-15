@@ -20,7 +20,7 @@
     "mocha": "^8.0.1"
   },
   "apidoc": {
-    "title": "DRUE 2020 Docs",
-    "url" : "htt://jakeryang.github.io/dreu2020"
+    "title": "DREU 2020 Docs",
+    "url" : "http://jakeryang.github.io/dreu2020/"
   }
 }
