@@ -18,5 +18,9 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "mocha": "^8.0.1"
+  },
+  "apidoc": {
+    "title": "DRUE 2020 Docs",
+    "url" : "htt://jakeryang.github.io/dreu2020"
   }
 }
