@@ -47,7 +47,7 @@ describe("Faculty", () => {
                     .end((e, res) => {
                         assert.equal(res.status, 200, "Status should be 200");
                         assert.property(res.body, '_id', "Body should have '_id' property");
-                        assert.equal(res.body._id, stuID, "ObjectID returned by API should be equal to input ObjectID");
+                        assert.equal(res.body._id, facID, "ObjectID returned by API should be equal to input ObjectID");
                         done();
                     });
             });
