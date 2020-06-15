@@ -48,7 +48,7 @@ router.get('/:id', studentController.getOneStudentById);
 router.get('/netid/:netid', studentController.getOneStudentByNetId);
 
 /**
- * @api {post} /api/students/ Create a studnet
+ * @api {post} /api/students/ Create a student
  * @apiName PostOneStudent
  * @apiGroup Student
  * 
