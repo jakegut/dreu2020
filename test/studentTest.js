@@ -22,7 +22,7 @@ describe('students', () => {
     
         it('Should fail to get student by ID with invalid ID', done => {
             chai.request(server)
-                .get('/api/students/0')
+                .get('/api/students/999999')
                 .end((err, res) => {
                     assert.equal(res.status, 404, "Status should be 404");
                     assert.property(res.body, 'message', "Body should have 'message' property");
@@ -162,7 +162,8 @@ describe('students', () => {
                 .send(stu)
                 .end((err, res) => {
                     assert.equal(res.status, 400, "Status should be 400");
-                    assert.property(res.body, 'errors', "Body should have 'errors' message");
+                    assert.property(res.body, 'name', "Body should have 'name'");
+                    assert.equal(res.body.name, 'MongoError', "Name of error should be 'MongoError'");
                     done();
                 });
         });
